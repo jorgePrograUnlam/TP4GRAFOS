@@ -69,6 +69,15 @@ public class GeneradorDeGrafo {
 
 	public static GrafoNDNP regularDeNnodosyGradoFijos(int cantidadNodos, int grado) {
 
+		if (grado % 2 != 0 && cantidadNodos % 2 != 0) {
+			System.out.println("grafo regular de grado impar y nodo impar");
+			return null;
+		}
+		if (grado >= cantidadNodos) {
+			System.out.println("grafo regular de grado mayor o igual a los nodos");
+			return null;
+		}
+
 		MatrizSimetrica m = new MatrizSimetrica(cantidadNodos);
 		int aristas = 0;
 
