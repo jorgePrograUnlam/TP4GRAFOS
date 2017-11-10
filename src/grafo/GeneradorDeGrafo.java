@@ -72,49 +72,13 @@ public class GeneradorDeGrafo {
 		MatrizSimetrica m = new MatrizSimetrica(cantidadNodos);
 		int aristas = 0;
 
-		int salto = (cantidadNodos - 1 - grado) / 2 + 1;
-		if (grado != 0 && grado != 1 && grado != 2) {
-			m.setIJ(0, cantidadNodos - 1, true);
-			aristas++;
-			for (int i = 0; i < cantidadNodos - 1; i++) {
-				int j = i + 1;
-				int contGrado = 1;
-				m.setIJ(i, j, true);
-				aristas++;
-				j += salto;
-				while (j < cantidadNodos && contGrado < grado / 2) {
-					m.setIJ(i, j, true);
-					aristas++;
-					j++;
-					contGrado++;
-				}
-				if (cantidadNodos % 2 == 0 && grado % 2 == 0)
-					j++;
-				while (j < cantidadNodos && contGrado < grado - 1) {
-					m.setIJ(i, j, true);
-					aristas++;
-					j++;
-					contGrado++;
-				}
-
+		for (int i = 0; i < cantidadNodos; i++) {
+			for (int j = 1; j <= grado / 2; j++) {
+				m.setIJ(i, (i + j) % cantidadNodos, true);
 			}
-		} else {
-			if (grado == 1)
-				for (int i = 0; i < cantidadNodos - 1; i += 2) {
-					m.setIJ(i, i + 1, true);
-					aristas++;
-				}
-			else {
-				if (grado == 2) {
-					m.setIJ(0, cantidadNodos - 1, true);
-					aristas++;
-					for (int i = 0; i < cantidadNodos - 1; i++) {
-						m.setIJ(i, i + 1, true);
-						aristas++;
-					}
-				}
+			if (i < (cantidadNodos / 2) && grado % 2 == 1) {
+				m.setIJ(i, i + (cantidadNodos / 2), true);
 			}
-
 		}
 
 		int gradoMaximo = grado;
@@ -130,25 +94,6 @@ public class GeneradorDeGrafo {
 
 		int grado = (int) Math.ceil(probAdy * (cantidadNodos - 1));
 
-		/*
-		 * if (grado >= cantidadNodos) { System.out.println("grado de " + cantidadNodos
-		 * + " nodos y " + grado + "grado no es posible"); return null; }
-		 * 
-		 * for (int x = 0; x < cantidadNodos - 1; x++) m.setIJ(x, x + 1, true); if
-		 * (cantidadNodos > 2) { m.setIJ(0, cantidadNodos - 1, true); grado -= 2;
-		 * 
-		 * if (grado % 2 != 0) { for (int x = 0; x < cantidadNodos / 2; x++) m.setIJ(x,
-		 * x + (cantidadNodos / 2), true); grado--; }
-		 * 
-		 * int cantVeces = grado / 2; int saltear = 2; for (int x = 0; x < cantVeces;
-		 * x++) { for (int nodoActual = 0; nodoActual < cantidadNodos; nodoActual++) {
-		 * int aux = nodoActual + saltear; if (aux > cantidadNodos - 1) aux -=
-		 * cantidadNodos; m.setIJ(nodoActual, aux, true); } saltear++; } }
-		 * 
-		 * int aristas = Math.abs((cantidadNodos * grado) / 2); double percADj =
-		 * ((double) aristas / m.getTam()) * 100; return new GrafoNDNP(cantidadNodos, m,
-		 * aristas, porcentajeAdy);
-		 */
 		return GeneradorDeGrafo.regularDeNnodosyGradoFijos(cantidadNodos, grado);
 
 	}
