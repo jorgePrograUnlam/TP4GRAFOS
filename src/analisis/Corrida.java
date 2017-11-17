@@ -3,15 +3,15 @@ package analisis;
 public class Corrida implements Comparable<Corrida> {
 
 	public int ejecucion;
-	public int numeroCromatico;
+	public int minimoColores;
 
 	public Corrida(int ejecucion, int numeroCromatico) {
 		this.ejecucion = ejecucion;
-		this.numeroCromatico = numeroCromatico;
+		this.minimoColores = numeroCromatico;
 	}
 
-	public int getNumeroCromatico() {
-		return numeroCromatico;
+	public int getMinimoColores() {
+		return minimoColores;
 	}
 
 	public int getEjecucion() {
@@ -20,7 +20,7 @@ public class Corrida implements Comparable<Corrida> {
 
 	@Override
 	public int compareTo(Corrida otro) {
-		return (this.numeroCromatico - otro.numeroCromatico);
+		return (this.minimoColores - otro.minimoColores);
 	}
 
 }

@@ -8,7 +8,7 @@ public class Main {
 	public static void main(String[] args) {
 		GrafoNDNP grafo;
 
-		grafo = GeneradorDeGrafo.nPartitoDeNnodosYnPartes(5, 2);
+		grafo = GeneradorDeGrafo.nPartitoDeNnodosYnPartes(6, 3);
 		grafo.mostrar();
 		grafo.guardarEn("grafo5.in");
 

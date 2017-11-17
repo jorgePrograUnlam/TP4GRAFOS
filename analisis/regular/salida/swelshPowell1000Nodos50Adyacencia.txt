@@ -1,0 +1,3 @@
+Minimo	Corrida
+377	0
+377	1
