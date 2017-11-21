@@ -5,43 +5,43 @@ import grafo.GrafoNDNP;
 
 public class Main {
 
-	public static void main(String[] args) {
-		GrafoNDNP grafo;
+    public static void main(String[] args) {
+        GrafoNDNP grafo;
 
-		grafo = GeneradorDeGrafo.nPartitoDeNnodosYnPartes(6, 3);
-		grafo.mostrar();
-		grafo.guardarEn("grafo5.in");
+        grafo = GeneradorDeGrafo.nPartitoDeNnodosYnPartes(6, 3);
+        grafo.mostrar();
+        grafo.guardarEn("grafo5.in");
 
-		System.out.println();
+        System.out.println();
 
-		grafo = GeneradorDeGrafo.regularDeNnodosyPorcentajeAdyacenciaFijos(8, 50);
-		grafo.mostrar();
-		grafo.guardarEn("grafo4.in");
-		grafo.coloreoMatula();
-		grafo.guardarColoreadoEn("coloreado4.out");
+        grafo = GeneradorDeGrafo.regularDeNnodosyPorcentajeAdyacenciaFijos(5, 60);
+        grafo.mostrar();
+        grafo.guardarEn("grafo4.in");
+        grafo.coloreoMatula();
+        grafo.guardarColoreadoEn("coloreado4.out");
 
-		System.out.println();
+        System.out.println();
 
-		grafo = GeneradorDeGrafo.regularDeNnodosyGradoFijos(10, 6);
-		grafo.mostrar();
-		grafo.guardarEn("grafo3.in");
+        grafo = GeneradorDeGrafo.regularDeNnodosyGradoFijos(5, 4);
+        grafo.mostrar();
+        grafo.guardarEn("grafo3.in");
 
-		System.out.println();
+        System.out.println();
 
-		grafo = GeneradorDeGrafo.AleatorioConPorcentajeAdyacenciaFijo(8, 40);
-		grafo.mostrar();
-		grafo.guardarEn("grafo2.in");
-		grafo.coloreoWelshPowell();
-		grafo.guardarColoreadoEn("coloreado2.out");
+        grafo = GeneradorDeGrafo.AleatorioConPorcentajeAdyacenciaFijo(8, 40);
+        grafo.mostrar();
+        grafo.guardarEn("grafo2.in");
+        grafo.coloreoWelshPowell();
+        grafo.guardarColoreadoEn("coloreado2.out");
 
-		System.out.println();
+        System.out.println();
 
-		grafo = GeneradorDeGrafo.AleatorioConProbabilidadDeAristaFijo(7, 0.4);
-		grafo.mostrar();
-		grafo.guardarEn("grafo1.in");
-		grafo.coloreoSecuencialAleatorio();
-		grafo.guardarColoreadoEn("coloreado1.out");
+        grafo = GeneradorDeGrafo.AleatorioConProbabilidadDeAristaFijo(7, 0.4);
+        grafo.mostrar();
+        grafo.guardarEn("grafo1.in");
+        grafo.coloreoSecuencialAleatorio();
+        grafo.guardarColoreadoEn("coloreado1.out");
 
-	}
+    }
 
 }

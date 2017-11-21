@@ -18,16 +18,16 @@ public class AnalizadorEstadistico {
 
     public static void crearArchivosDeGrafos() {
         GrafoNDNP grafo600_40 = GeneradorDeGrafo.AleatorioConPorcentajeAdyacenciaFijo(600, 40);
-        grafo600_40.guardarEn("analisis\\aleatorio\\entrada\\600Nodos40Adyacencia.txt");
+        grafo600_40.guardarEn("analisis\\aleatorio\\entrada\\600Nodos40Adyacencia.in");
         GrafoNDNP grafo600_60 = GeneradorDeGrafo.AleatorioConPorcentajeAdyacenciaFijo(600, 60);
-        grafo600_60.guardarEn("analisis\\aleatorio\\entrada\\600Nodos60Adyacencia.txt");
+        grafo600_60.guardarEn("analisis\\aleatorio\\entrada\\600Nodos60Adyacencia.in");
         GrafoNDNP grafo600_90 = GeneradorDeGrafo.AleatorioConPorcentajeAdyacenciaFijo(600, 90);
-        grafo600_90.guardarEn("analisis\\aleatorio\\entrada\\600Nodos90Adyacencia.txt");
+        grafo600_90.guardarEn("analisis\\aleatorio\\entrada\\600Nodos90Adyacencia.in");
 
         GrafoNDNP grafo1000_75 = GeneradorDeGrafo.regularDeNnodosyPorcentajeAdyacenciaFijos(1000, 75);
-        grafo1000_75.guardarEn("analisis\\regular\\entrada\\1000Nodos75Adyacencia.txt");
+        grafo1000_75.guardarEn("analisis\\regular\\entrada\\1000Nodos75Adyacencia.in");
         GrafoNDNP grafo1000_50 = GeneradorDeGrafo.regularDeNnodosyPorcentajeAdyacenciaFijos(1000, 50);
-        grafo1000_50.guardarEn("analisis\\regular\\entrada\\1000Nodos50Adyacencia.txt");
+        grafo1000_50.guardarEn("analisis\\regular\\entrada\\1000Nodos50Adyacencia.in");
     }
 
     private static void guardarAnalisis(List<Corrida> corridas, String ruta) {
@@ -60,7 +60,7 @@ public class AnalizadorEstadistico {
         GrafoNDNP grafo;
         List<Corrida> corridas;
 
-        grafo = new GrafoNDNP("analisis\\aleatorio\\entrada\\600Nodos40Adyacencia.txt");
+        grafo = new GrafoNDNP("analisis\\aleatorio\\entrada\\600Nodos40Adyacencia.in");
 
         corridas = new LinkedList<Corrida>();
         for (int i = 0; i < EJECUCIONES; i++) {
@@ -68,7 +68,7 @@ public class AnalizadorEstadistico {
             corridas.add(new Corrida(i, grafo.getMinimoColores()));
             grafo.despintar();
         }
-        guardarAnalisis(corridas, "analisis\\aleatorio\\salida\\secuencial600Nodos40Adyacencia.txt");
+        guardarAnalisis(corridas, "analisis\\aleatorio\\salida\\secuencial600Nodos40Adyacencia.out");
 
         corridas = new LinkedList<Corrida>();
         for (int i = 0; i < EJECUCIONES; i++) {
@@ -76,7 +76,7 @@ public class AnalizadorEstadistico {
             corridas.add(new Corrida(i, grafo.getMinimoColores()));
             grafo.despintar();
         }
-        guardarAnalisis(corridas, "analisis\\aleatorio\\salida\\welshPowell600Nodos40Adyacencia.txt");
+        guardarAnalisis(corridas, "analisis\\aleatorio\\salida\\welshPowell600Nodos40Adyacencia.out");
 
         corridas = new LinkedList<Corrida>();
         for (int i = 0; i < EJECUCIONES; i++) {
@@ -84,16 +84,16 @@ public class AnalizadorEstadistico {
             corridas.add(new Corrida(i, grafo.getMinimoColores()));
             grafo.despintar();
         }
-        guardarAnalisis(corridas, "analisis\\aleatorio\\salida\\matula600Nodos40Adyacencia.txt");
+        guardarAnalisis(corridas, "analisis\\aleatorio\\salida\\matula600Nodos40Adyacencia.out");
 
-        grafo = new GrafoNDNP("analisis\\aleatorio\\entrada\\600Nodos60Adyacencia.txt");
+        grafo = new GrafoNDNP("analisis\\aleatorio\\entrada\\600Nodos60Adyacencia.in");
         corridas = new LinkedList<Corrida>();
         for (int i = 0; i < EJECUCIONES; i++) {
             grafo.coloreoSecuencialAleatorio();
             corridas.add(new Corrida(i, grafo.getMinimoColores()));
             grafo.despintar();
         }
-        guardarAnalisis(corridas, "analisis\\aleatorio\\salida\\secuencial600Nodos60Adyacencia.txt");
+        guardarAnalisis(corridas, "analisis\\aleatorio\\salida\\secuencial600Nodos60Adyacencia.out");
 
         corridas = new LinkedList<Corrida>();
         for (int i = 0; i < EJECUCIONES; i++) {
@@ -101,7 +101,7 @@ public class AnalizadorEstadistico {
             corridas.add(new Corrida(i, grafo.getMinimoColores()));
             grafo.despintar();
         }
-        guardarAnalisis(corridas, "analisis\\aleatorio\\salida\\welshPowell600Nodos60Adyacencia.txt");
+        guardarAnalisis(corridas, "analisis\\aleatorio\\salida\\welshPowell600Nodos60Adyacencia.out");
 
         corridas = new LinkedList<Corrida>();
         for (int i = 0; i < EJECUCIONES; i++) {
@@ -109,9 +109,9 @@ public class AnalizadorEstadistico {
             corridas.add(new Corrida(i, grafo.getMinimoColores()));
             grafo.despintar();
         }
-        guardarAnalisis(corridas, "analisis\\aleatorio\\salida\\matula600Nodos60Adyacencia.txt");
+        guardarAnalisis(corridas, "analisis\\aleatorio\\salida\\matula600Nodos60Adyacencia.out");
 
-        grafo = new GrafoNDNP("analisis\\aleatorio\\entrada\\600Nodos90Adyacencia.txt");
+        grafo = new GrafoNDNP("analisis\\aleatorio\\entrada\\600Nodos90Adyacencia.in");
 
         corridas = new LinkedList<Corrida>();
         for (int i = 0; i < EJECUCIONES; i++) {
@@ -119,7 +119,7 @@ public class AnalizadorEstadistico {
             corridas.add(new Corrida(i, grafo.getMinimoColores()));
             grafo.despintar();
         }
-        guardarAnalisis(corridas, "analisis\\aleatorio\\salida\\secuencial600Nodos90Adyacencia.txt");
+        guardarAnalisis(corridas, "analisis\\aleatorio\\salida\\secuencial600Nodos90Adyacencia.out");
 
         corridas = new LinkedList<Corrida>();
         for (int i = 0; i < EJECUCIONES; i++) {
@@ -127,7 +127,7 @@ public class AnalizadorEstadistico {
             corridas.add(new Corrida(i, grafo.getMinimoColores()));
             grafo.despintar();
         }
-        guardarAnalisis(corridas, "analisis\\aleatorio\\salida\\welshPowell600Nodos90Adyacencia.txt");
+        guardarAnalisis(corridas, "analisis\\aleatorio\\salida\\welshPowell600Nodos90Adyacencia.out");
 
         corridas = new LinkedList<Corrida>();
         for (int i = 0; i < EJECUCIONES; i++) {
@@ -135,7 +135,7 @@ public class AnalizadorEstadistico {
             corridas.add(new Corrida(i, grafo.getMinimoColores()));
             grafo.despintar();
         }
-        guardarAnalisis(corridas, "analisis\\aleatorio\\salida\\matula600Nodos90Adyacencia.txt");
+        guardarAnalisis(corridas, "analisis\\aleatorio\\salida\\matula600Nodos90Adyacencia.out");
 
     }
 
@@ -143,7 +143,7 @@ public class AnalizadorEstadistico {
         GrafoNDNP grafo;
         List<Corrida> corridas;
 
-        grafo = new GrafoNDNP("analisis\\regular\\entrada\\1000Nodos50Adyacencia.txt");
+        grafo = new GrafoNDNP("analisis\\regular\\entrada\\1000Nodos50Adyacencia.in");
 
         corridas = new LinkedList<Corrida>();
         for (int i = 0; i < EJECUCIONES; i++) {
@@ -151,7 +151,7 @@ public class AnalizadorEstadistico {
             corridas.add(new Corrida(i, grafo.getMinimoColores()));
             grafo.despintar();
         }
-        guardarAnalisis(corridas, "analisis\\regular\\salida\\secuencial1000Nodos50Adyacencia.txt");
+        guardarAnalisis(corridas, "analisis\\regular\\salida\\secuencial1000Nodos50Adyacencia.out");
 
         corridas = new LinkedList<Corrida>();
         for (int i = 0; i < EJECUCIONES; i++) {
@@ -159,7 +159,7 @@ public class AnalizadorEstadistico {
             corridas.add(new Corrida(i, grafo.getMinimoColores()));
             grafo.despintar();
         }
-        guardarAnalisis(corridas, "analisis\\regular\\salida\\swelshPowell1000Nodos50Adyacencia.txt");
+        guardarAnalisis(corridas, "analisis\\regular\\salida\\welshPowell1000Nodos50Adyacencia.out");
 
         corridas = new LinkedList<Corrida>();
         for (int i = 0; i < EJECUCIONES; i++) {
@@ -167,9 +167,9 @@ public class AnalizadorEstadistico {
             corridas.add(new Corrida(i, grafo.getMinimoColores()));
             grafo.despintar();
         }
-        guardarAnalisis(corridas, "analisis\\regular\\salida\\matula1000Nodos50Adyacencia.txt");
+        guardarAnalisis(corridas, "analisis\\regular\\salida\\matula1000Nodos50Adyacencia.out");
 
-        grafo = new GrafoNDNP("analisis\\regular\\entrada\\1000Nodos75Adyacencia.txt");
+        grafo = new GrafoNDNP("analisis\\regular\\entrada\\1000Nodos75Adyacencia.in");
 
         corridas = new LinkedList<Corrida>();
         for (int i = 0; i < EJECUCIONES; i++) {
@@ -177,7 +177,7 @@ public class AnalizadorEstadistico {
             corridas.add(new Corrida(i, grafo.getMinimoColores()));
             grafo.despintar();
         }
-        guardarAnalisis(corridas, "analisis\\regular\\salida\\secuencial1000Nodos75Adyacencia.txt");
+        guardarAnalisis(corridas, "analisis\\regular\\salida\\secuencial1000Nodos75Adyacencia.out");
 
         corridas = new LinkedList<Corrida>();
         for (int i = 0; i < EJECUCIONES; i++) {
@@ -185,7 +185,7 @@ public class AnalizadorEstadistico {
             corridas.add(new Corrida(i, grafo.getMinimoColores()));
             grafo.despintar();
         }
-        guardarAnalisis(corridas, "analisis\\regular\\salida\\welshPowell1000Nodos75Adyacencia.txt");
+        guardarAnalisis(corridas, "analisis\\regular\\salida\\welshPowell1000Nodos75Adyacencia.out");
 
         corridas = new LinkedList<Corrida>();
         for (int i = 0; i < EJECUCIONES; i++) {
@@ -193,13 +193,13 @@ public class AnalizadorEstadistico {
             corridas.add(new Corrida(i, grafo.getMinimoColores()));
             grafo.despintar();
         }
-        guardarAnalisis(corridas, "analisis\\regular\\salida\\matula1000Nodos75Adyacencia.txt");
+        guardarAnalisis(corridas, "analisis\\regular\\salida\\matula1000Nodos75Adyacencia.out");
 
     }
 
     public static void main(String[] args) {
-        // crearArchivosDeGrafos();
-        // analisisAleatorio();
+        crearArchivosDeGrafos();
+        analisisAleatorio();
         analisisRegular();
     }
 

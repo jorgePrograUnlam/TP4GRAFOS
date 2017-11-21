@@ -85,7 +85,7 @@ public class GeneradorDeGrafo {
         MatrizSimetrica m = new MatrizSimetrica(cantidadNodos);
         double probAdy = porcentajeAdy / 100;
 
-        int grado = (int) Math.ceil(probAdy * (cantidadNodos - 1));
+        int grado = (int) (probAdy * (cantidadNodos - 1));
 
         return GeneradorDeGrafo.regularDeNnodosyGradoFijos(cantidadNodos, grado);
 

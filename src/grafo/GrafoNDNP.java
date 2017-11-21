@@ -106,9 +106,9 @@ public class GrafoNDNP {
             this.nodos = new ArrayList<Nodo>(this.cantidadNodos);
             for (int i = 0; i < cantidadNodos; i++) {
                 int grado = 0;
-                for (int j = i + 1; j < cantidadNodos; j++) {
+                for (int j = 0; j < cantidadNodos; j++) {
                     if (matrizAdyacencia.getIJ(i, j))
-                        grado += 2;
+                        grado++;
                 }
                 nodos.add(new Nodo(i, grado));
             }
@@ -272,6 +272,8 @@ public class GrafoNDNP {
             nodo.setColor(0);
         }
         this.minimoColores = 0;
+
+        // Collections.sort(nodos, Comparator.comparingInt(Nodo::getI));
     }
 
 }

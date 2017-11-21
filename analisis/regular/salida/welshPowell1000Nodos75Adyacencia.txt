@@ -1,3 +1,0 @@
-Minimo	Corrida
-531	1
-537	0
